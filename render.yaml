@@ -20,4 +20,4 @@ services:
       - key: PORT
         value: 5000
       - key: MONGO_URL
-        value:mongodb+srv://amnvramachandra:ramachandra559@cluster0.gzkpmmq.mongodb.net/data_filtering
+        value:"mongodb+srv://amnvramachandra:ramachandra559@cluster0.gzkpmmq.mongodb.net/data_filtering"

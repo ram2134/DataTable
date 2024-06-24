@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: my-frontend
+    env: node
+    plan: free
+    buildCommand: yarn --cwd frontend install && yarn --cwd frontend build
+    startCommand: serve -s frontend/build
+    envVars:
+      - key: NODE_VERSION
+        value: 14
+    staticPublishPath: frontend/build
+
+  - type: web
+    name: my-backend
+    env: node
+    plan: free
+    buildCommand: yarn --cwd backend install
+    startCommand: yarn --cwd backend start
+    envVars:
+      - key: NODE_VERSION
+        value: 14
+      - key: MONGO_URI
+        fromDatabase:
+          name: my-database
+          key: connectionString

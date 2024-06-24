@@ -17,8 +17,8 @@ services:
     buildCommand: yarn --cwd backend install
     startCommand: yarn --cwd backend start
     envVars:
-      - key: NODE_VERSION
-        value: 14
+      - key: PORT
+        value: 5000
       - key: MONGO_URL
         fromDatabase:
           name: my-database

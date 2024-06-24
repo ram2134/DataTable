@@ -104,7 +104,7 @@ function App() {
   useEffect(() => {
     // Fetch data from the backend
     axios
-      .get("http://localhost:5000/data")
+      .get("https://datatable-backend-m1gz.onrender.com/data")
       .then((response) => {
         setData(response.data);
       })

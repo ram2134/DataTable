@@ -19,7 +19,7 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 14
-      - key: MONGO_URI
+      - key: MONGO_URL
         fromDatabase:
           name: my-database
           key: connectionString

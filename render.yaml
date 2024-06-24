@@ -15,9 +15,13 @@ services:
     env: node
     plan: free
     buildCommand: yarn --cwd backend install
-    startCommand: yarn --cwd backend start
+    startCommand: node backend/src/index.js
     envVars:
+      - key: NODE_VERSION
+        value: 14
+      - key: MONGO_URL
+        fromDatabase:
+          name: my-database
+          key: connectionString
       - key: PORT
         value: 5000
-      - key: MONGO_URL
-        value:"mongodb+srv://amnvramachandra:ramachandra559@cluster0.gzkpmmq.mongodb.net/data_filtering"
